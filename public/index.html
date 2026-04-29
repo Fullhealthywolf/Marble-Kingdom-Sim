@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marble Kingdom Sim</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>⚔️ Marble Kingdom Sim ⚔️</h1>
+      <p class="subtitle">Strategic Army Simulation - Not Just a Marble Race, But the Entire War</p>
+    </header>
+
+    <div class="main-content">
+      <div class="canvas-wrapper">
+        <canvas id="gameCanvas" width="1200" height="800"></canvas>
+        <div class="canvas-overlay">
+          <button id="pausePlayBtn" class="control-btn">▶ Play</button>
+          <button id="resetBtn" class="control-btn">↻ Reset</button>
+          <button id="zoomInBtn" class="control-btn">🔍+</button>
+          <button id="zoomOutBtn" class="control-btn">🔍-</button>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="panel">
+          <h3>⏱️ Simulation</h3>
+          <div class="stat-item">
+            <label>Turn:</label>
+            <span id="turnCounter">0</span>
+          </div>
+          <div class="stat-item">
+            <label>Speed:</label>
+            <input type="range" id="speedSlider" min="1" max="10" step="1" value="1">
+            <span id="speedValue">1x</span>
+          </div>
+          <div class="stat-item">
+            <label>Active Armies:</label>
+            <span id="armyCount">0</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>🏰 Kingdoms</h3>
+          <div id="kingdomsList" style="max-height: 300px; overflow-y: auto;">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>⚙️ Setup</h3>
+          <div class="setting-item">
+            <label>Num Kingdoms:</label>
+            <input type="number" id="numKingdoms" min="2" max="8" value="4">
+          </div>
+          <div class="setting-item">
+            <label>Towns:</label>
+            <input type="number" id="numTowns" min="0" max="20" value="5">
+          </div>
+          <button id="startBtn" class="action-btn">� Start New Game</button>
+          <button id="pausePlayBtn2" class="action-btn">▶ Play</button>
+          <button id="clearCanvasBtn" class="action-btn">🧹 Clear</button>
+        </div>
+
+        <div class="panel">
+          <h3>📊 Events</h3>
+          <div id="eventLog" style="max-height: 300px; overflow-y: auto; font-size: 0.85em; background: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace;">
+            <div class="log-entry">Waiting for simulation...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

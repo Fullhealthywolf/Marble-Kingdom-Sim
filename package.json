@@ -1,0 +1,16 @@
+{
+  "name": "marble-kingdom-sim",
+  "version": "1.0.0",
+  "description": "A marble physics fighter simulation inspired by Lost Marbles Marble Kingdoms series",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js"
+  },
+  "keywords": ["marble", "physics", "simulation", "game"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
