@@ -163,7 +163,7 @@ class MarbleKingdomSim {
             town.garrison = Math.min(town.garrison + 10, 200);
           } else {
             // Battle!
-            this.startBattle(army, town);
+            //this.startBattle(army, town);
             return;
           }
         }
@@ -510,8 +510,9 @@ class MarbleKingdomSim {
   draw() {
     if (this.gameMode === 'world') {
       this.drawWorld();
+      this.drawPlinko();
     } else {
-      this.drawBattle();
+      //this.drawBattle();
     }
   }
   
@@ -588,6 +589,34 @@ class MarbleKingdomSim {
     this.ctx.fillText(`Towns: ${this.towns.length}`, 20, 63);
     this.ctx.fillText(`Mode: World Map`, 20, 78);
   }
+
+  drawPlinko() {
+    const canvasWidth = this.ctx.canvas.width;
+    const startY = 50;
+
+    let rows = 5;
+    let spacing = 50;
+    let radius = 10;
+
+  for (let i = 0; i < rows; i++) {
+    // Calculate the y-position for this row
+    const y = startY + i * spacing;
+    
+    // Calculate the total width of this row of pegs to center it
+    const rowWidth = i * spacing;
+    const startX = (canvasWidth - rowWidth) / 2;
+
+    for (let j = 0; j <= i; j++) {
+      const x = startX + j * spacing;
+      
+      this.ctx.beginPath();
+      this.ctx.arc(x, y, radius, 0, Math.PI * 2);
+      this.ctx.fillStyle = "#ffffff";
+      this.ctx.fill();
+      this.ctx.closePath();
+    }
+  }
+}
   
   drawBattle() {
     // Background
