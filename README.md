@@ -35,7 +35,7 @@ A marble physics fighter simulation inspired by the "Marble Kingdoms" series fro
 
 1. Navigate to the project directory:
 ```bash
-cd "c:\Users\k1222969\OneDrive - Katy Independent School District\HTML\Private\Marble-Kingdom-Sim"
+cd "Marble-Kingdom-Sim"
 ```
 
 2. Install dependencies:
